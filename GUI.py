@@ -42,6 +42,9 @@ class ChromiumDcode():
         btn = ttk.Button(mainScreen, text=' Convert timestamps ', command=self.retrieve_input)
         btn.place(x=35, y=550)
 
+        btnClipboard = ttk.Button(mainScreen, text='Copy to clipboard', command=self.clipboard)
+        btnClipboard.place(x= 190, y=550)
+
         mainScreen.option_add('*tearOff', False)
         mainScreen.mainloop()
 
@@ -52,6 +55,10 @@ class ChromiumDcode():
         for m in matches:
             self.user_timestamps.append(m)
         self.converter()
+
+    def clipboard(self):
+        self.__MainWindow.clipboard_clear()
+        self.__MainWindow.clipboard_append(self.output_entry.get("1.0", END))
 
     def converter(self):
         for stamp in self.user_timestamps:
