@@ -9,7 +9,6 @@ class ChromiumDcode():
     def __init__(self):
         self.__title = "Test Application"
         self.__screen_geometry = "1000x700"
-        self.__mainScreenFile = "backing.png"
         self.__MainWindow = Tk()
 
         self.inputEntry = object
@@ -23,13 +22,11 @@ class ChromiumDcode():
 
         mainScreen.attributes("-topmost", False)
         mainScreen.resizable(False, False)
-        background = ttk.Label(mainScreen, text="")
-        background.place(x=0, y=0)
 
-        logo = PhotoImage(file=self.__mainScreenFile, master=mainScreen)
-        background.config(image=logo)
-        background.img = logo
-        background.config(image=background.img)
+        lbl1 = ttk.Label(mainScreen, text='Chromium times', font=("Roboto", 24))
+        lbl2 = ttk.Label(mainScreen, text='Converted times', font=("Roboto", 24))
+        lbl1.place(x=90, y=64)
+        lbl2.place(x=650, y=64)
 
         input_entry = tkinter.Text(mainScreen)
         input_entry.place(x=30, y=105, height = 400, width = 400)
@@ -68,8 +65,9 @@ class ChromiumDcode():
             self.output_entry.insert(tkinter.END, f"{t}\n")
 
 
-c = ChromiumDcode()
-c.screen()
+if __name__ == '__main__':
+    c = ChromiumDcode()
+    c.screen()
 
 
 
