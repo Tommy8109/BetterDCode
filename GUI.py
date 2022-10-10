@@ -24,7 +24,7 @@ class ChromiumDcode():
         mainScreen.attributes("-topmost", False)
         mainScreen.resizable(False, False)
 
-        lbl1 = ttk.Label(mainScreen, text='Chromium times', font=("Roboto", 24))
+        lbl1 = ttk.Label(mainScreen, text='Timestamps', font=("Roboto", 24))
         lbl2 = ttk.Label(mainScreen, text='Converted times', font=("Roboto", 24))
         lbl1.place(x=90, y=64)
         lbl2.place(x=650, y=64)
